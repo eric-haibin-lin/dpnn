@@ -176,7 +176,7 @@ function NCEModule:updateOutput(inputTable)
       self._sampleidx = self._sampleidx or self.sampleidx.new()
       self._sampleidx:resize(batchsize, self.k)
       
-      -- sample (batchsize x k+1) noise samples
+      -- sample (batchsize x k) noise samples
       self:noiseSample(self._sampleidx, batchsize, self.k)
       
       self.sampleidx:narrow(2,2,self.k):copy(self._sampleidx)
